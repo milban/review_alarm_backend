@@ -1,4 +1,25 @@
 type User {
   id: ID! @id
+  email: String! @unique
+  password: String!
+  username: String! @unique
   name: String!
+  createAt: DateTime! @createAt
+  lastLoginAt: DateTime!
+  reviews: [Review!]
+}
+
+type Review {
+  id: ID! @id
+  owner: User! @relation(link: INLINE)
+  s3: String! @unique
+  createAt: DateTime! @createAt
+  cycles: [Cycle!]!
+}
+
+type Cycle {
+  id: ID! @id
+  review: Review! @relation(link: INLINE)
+  reviewDate: DateTime!
+  isReviewed: Boolean! @default(value: false)
 }

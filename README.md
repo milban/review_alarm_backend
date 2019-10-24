@@ -4,7 +4,7 @@
 
 To Do
 - [x] DB 연결
-- [ ] DB Schema 짜기
+- [x] DB Schema 짜기
 - [ ] 회원가입
 - [ ] 로그인
 - [ ] 로그아웃
